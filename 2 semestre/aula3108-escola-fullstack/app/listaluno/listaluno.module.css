@@ -1,0 +1,278 @@
+.container {
+    min-height: calc(100vh - 90px);
+    padding: 3rem;
+
+    background:
+        radial-gradient(circle at top left, #1a1a40, #090916 70%);
+}
+
+.headerSection {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.headerSection h2 {
+    font-size: 2.8rem;
+    margin-bottom: .5rem;
+
+    background: linear-gradient(
+        90deg,
+        #00f7ff,
+        #8a2be2
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 0 15px #00f7ff;
+}
+
+.headerSection p {
+    color: #cfcfff;
+    font-size: 1rem;
+}
+
+.tableCard {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 2rem;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(15px);
+
+    border-radius: 25px;
+
+    border: 1px solid rgba(0, 247, 255, 0.3);
+
+    box-shadow:
+        0 0 10px rgba(0, 247, 255, 0.2),
+        0 0 25px rgba(138, 43, 226, 0.3);
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 1rem;
+
+    margin-bottom: 2rem;
+}
+
+.search {
+    width: 350px;
+    max-width: 100%;
+
+    padding: 1rem;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(138, 43, 226, 0.5);
+
+    background: rgba(255, 255, 255, 0.05);
+
+    color: white;
+
+    outline: none;
+
+    transition: .3s;
+}
+
+.search::placeholder {
+    color: #999;
+}
+
+.search:focus {
+    border-color: #00f7ff;
+
+    box-shadow:
+        0 0 10px #00f7ff,
+        0 0 20px rgba(138, 43, 226, .5);
+}
+
+.total {
+    color: #00f7ff;
+    font-weight: bold;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.table thead {
+    background:
+        linear-gradient(
+            90deg,
+            #00f7ff,
+            #8a2be2
+        );
+}
+
+.table th {
+    padding: 1rem;
+    text-align: left;
+
+    color: white;
+    letter-spacing: 1px;
+}
+
+.table td {
+    padding: 1rem;
+
+    color: #ffffff;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+.table tbody tr {
+    background: rgba(255, 255, 255, 0.03);
+
+    transition: .3s;
+}
+
+.table tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.table tbody tr:hover {
+    background: rgba(0, 247, 255, 0.12);
+
+    box-shadow:
+        inset 0 0 10px rgba(0, 247, 255, 0.4);
+
+    transform: scale(1.01);
+}
+
+.table tbody tr:hover td {
+    color: #00f7ff;
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        padding: 1rem;
+    }
+
+    .actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .tableCard {
+        overflow-x: auto;
+    }
+
+    .table {
+        min-width: 700px;
+    }
+}
+
+/* Grade futurista de fundo */
+
+.container::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 247, 255, 0.03) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(138, 43, 226, 0.03) 1px,
+            transparent 1px
+        );
+
+    background-size: 40px 40px;
+
+    pointer-events: none;
+}
+/* Botões de ações da tabela */
+
+.table td:last-child {
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+}
+
+.table td button {
+    padding: 0.6rem 1rem;
+
+    border-radius: 10px;
+
+    font-size: 0.85rem;
+    font-weight: bold;
+
+    color: white;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    backdrop-filter: blur(5px);
+}
+
+/* Botão Editar */
+
+.table td button:first-child {
+    border-color: rgba(0, 247, 255, 0.5);
+
+    color: #00f7ff;
+}
+
+.table td button:first-child:hover {
+    background: rgba(0, 247, 255, 0.15);
+
+    border-color: #00f7ff;
+
+    box-shadow:
+        0 0 8px #00f7ff,
+        0 0 18px rgba(0, 247, 255, 0.4);
+
+    transform: translateY(-2px);
+}
+
+/* Botão Deletar */
+
+.table td button:last-child {
+    border-color: rgba(255, 70, 100, 0.5);
+
+    color: #ff6b81;
+}
+
+.table td button:last-child:hover {
+    background: rgba(255, 70, 100, 0.12);
+
+    border-color: #ff4664;
+
+    box-shadow:
+        0 0 8px #ff4664,
+        0 0 18px rgba(255, 70, 100, 0.4);
+
+    transform: translateY(-2px);
+}
+
+/* Efeito ao clicar */
+
+.table td button:active {
+    transform: scale(0.95);
+}
